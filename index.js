@@ -7,7 +7,7 @@ mongoose.connect("mongodb://localhost/mongoose_basics", async function(err) {
 
   console.log("Successfully connected");
 
-  const jamieAuthor = new Author({
+  var jamieAuthor = new Author({
     _id: new mongoose.Types.ObjectId(),
     name: {
       firstName: "Jamie",
@@ -23,7 +23,7 @@ mongoose.connect("mongodb://localhost/mongoose_basics", async function(err) {
 
   console.log("Author successfully saved.");
 
-  const mvcBook = new Book({
+  var mvcBook = new Book({
     _id: new mongoose.Types.ObjectId(),
     title: "ASP.NET MVC 5 with Bootstrap and Knockout.js",
     author: jamieAuthor._id,
@@ -38,7 +38,7 @@ mongoose.connect("mongodb://localhost/mongoose_basics", async function(err) {
 
   console.log("MVC Book successfully saved.");
 
-  const knockoutBook = new Book({
+  var knockoutBook = new Book({
     _id: new mongoose.Types.ObjectId(),
     title: "Knockout.js: Building Dynamic Client-Side Web Applications",
     author: jamieAuthor._id
