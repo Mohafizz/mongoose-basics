@@ -119,4 +119,12 @@ mongoose.connect("mongodb://localhost/mongoose_basics", async function(err) {
   await knockoutBook.save();
 
   console.log("Knockout.JS Book successfully saved.");
+
+  const books = await Book.find({
+    title: /mvc/i
+  })
+    .sort("-created")
+    .limit(5)
+    .exec();
+  console.log("Found books with `MVC` in the name", books);
 });
