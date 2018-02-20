@@ -44,6 +44,10 @@ var bookSchema = mongoose.Schema({
   }
 });
 
+var Author = mongoose.model('Author', authorSchema);
+ 
+var Book = mongoose.model('Book', bookSchema);
+
 mongoose.connect("mongodb://localhost/mongoose_basics", function(err) {
   if (err) throw err;
 
